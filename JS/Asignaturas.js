@@ -2,6 +2,7 @@ var UrlAsignaturas = 'http://20.216.41.245:90/G7_20/controller/AsignaturaControl
 var UrlInsertAsignaturas = 'http://20.216.41.245:90/G7_20/controller/AsignaturaControlle.php?opc=insertasignatura';
 var UrlGetAsignatura = 'http://20.216.41.245:90/G7_20/controller/AsignaturaControlle.php?opc=Getasignatura';
 var UrlUpdateAsignatura = 'http://20.216.41.245:90/G7_20/controller/AsignaturaControlle.php?opc=Updateasignatura';
+var UrlDeleteAsignatura = 'http://20.216.41.245:90/G7_20/controller/AsignaturaControlle.php?opc=Delteasignatura';
 
 $(document).ready(function(){
   CargarAsignaturas();
@@ -26,7 +27,10 @@ function CargarAsignaturas(){
                 '<td>'+ MiItems[i].PromedioAprobacion +'</td>'+
                 '<td>'+ MiItems[i].NumeroEdificio +'</td>'+
                 '<td>'+
-                '<button class = "btn btn-info" onclick = "CargarAsignatura('+ MiItems[i].CodigoAsignatura+')">Editar</button>'+
+                '<button class = "btn btn-info" onclick = "CargarAsignatura('+ MiItems[i].CodigoAsignatura +')">Editar</button>'+
+                '</td>'+
+                '<td>'+
+                '<button class = "btn btn-danger" onclick = "EliminarAsignatura('+ MiItems[i].CodigoAsignatura +')">Eliminar</button>'+
                 '</td>'+
             '</tr>';
             $('#DataAsignaturas').html(Valores);
@@ -119,4 +123,28 @@ function ActualizarAsignatura(CodAsignatura){
         }
     });
     alert('Aviso');
+}
+
+function EliminarAsignatura(CodAsignatura){
+    var datosasignatura = {
+        CodigoAsignatura: CodAsignatura  
+    };
+    var datosasignaturajson = JSON.stringify(datosasignatura);
+    $.ajax({
+        url: UrlDeleteAsignatura,
+        type: 'DELETE',
+        data: datosasignaturajson,
+        dataType: 'JSON',
+        contentType: 'application/json',
+        success: function(reponse){
+            console.log(reponse);
+            alert("Asignatura Eliminada");
+        },
+        error: function(textStatus, errorThrown){
+            alert('Error al eliminar la asignatura'+ textStatus + errorThrown);
+        }   
+    });
+    alert("Aviso");
+    CargarAsignaturas();
+
 }
