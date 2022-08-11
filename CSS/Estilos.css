@@ -1,0 +1,117 @@
+* {
+margin:0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.contenedor{
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.Titulo{
+    color: #9a27b1;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header{
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 600px;
+    background: #FF0099;  
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #49324077, #ff00993a), url(../img/lenguajes-programacion.jpg); 
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4932404d, #f151b183), url(../img/lenguajes-programacion.jpg); 
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav{
+    text-align: right;
+    padding: 30px 50px 0 0;
+}
+
+nav > a{
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+nav > a:hover{
+    text-decoration: underline;
+}
+
+header .textos-header{
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textos-header h1{
+    font-size: 50px;
+    color: #fff;
+}
+
+.textos-header h2{
+    font-size: 30px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.Contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imagen-about-us{
+    width: 48%;
+
+}
+
+.sobre-nosotros .contenido-text{
+    width: 48%;
+}
+
+.contenido-text h3{
+    margin: 15px;
+}
+
+.contenido-text h3 span{
+    background: #4d0686;
+    color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.contenido-text h5{
+    padding: 0px 0px 30px 15px;
+    font-weight: bold;
+    text-align: center;
+}
