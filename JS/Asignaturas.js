@@ -95,6 +95,7 @@ function CargarAsignatura (CodAsignatura){
         }
 
     });
+    
 }
 
 function ActualizarAsignatura(CodAsignatura){
